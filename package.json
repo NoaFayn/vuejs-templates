@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "@vue/tsconfig": "^0.5.1",
+    "vue": "^3.4.35"
+  },
+  "name": "vuejs-templates",
+  "description": "All of the templates that I use with VueJS.",
+  "version": "1.0.0",
+  "devDependencies": {
+    "vue-tsc": "^2.0.29"
+  },
+  "scripts": {
+    "type-check": "vue-tsc --build --force"
+  },
+  "keywords": [
+    "vuejs"
+  ],
+  "author": "rainfall",
+  "license": "CC by 4.0"
+}
