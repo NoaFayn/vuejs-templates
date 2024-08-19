@@ -5,7 +5,7 @@
   },
   "name": "vuejs-templates",
   "description": "All of the templates that I use with VueJS.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "devDependencies": {
     "vue-tsc": "^2.0.29"
   },

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// @rainfall - vuejs-templates - v1.1.0
+// @rainfall - vuejs-templates - v1.1.1
 // A table with selectable rows
 // ---
 // The renderer is the Vue component that takes an "element" prop and renders the element as a list of <td> HTML elements.
@@ -11,7 +11,7 @@ type Element = any;
 
 interface Header {
   name: string,
-  sortValue: (element: Element) => any,
+  sortValue: ((element: Element) => any) | null,
 }
 
 const props = withDefaults(defineProps<{
@@ -75,13 +75,14 @@ function selectionUpdate() {
       <tr>
         <th><label class="checkbox"><input @click="toggleSelectionForAll($event)" type="checkbox"></label></th>
         <th v-for="header in headers">
-          <button @click="sortElements(header.sortValue)">
+          <button v-if="header.sortValue" @click="sortElements(header.sortValue)">
             <b>{{ header.name }}</b>
             <span v-if="sortKey === header.sortValue" class="icon">
               <i v-if="sortOrder === 1" class="bi bi-caret-up-fill"></i>
               <i v-else class="bi bi-caret-down-fill"></i>
             </span>
           </button>
+          <b v-else>{{ header.name }}</b>
         </th>
         <slot name="thead"></slot>
       </tr>
